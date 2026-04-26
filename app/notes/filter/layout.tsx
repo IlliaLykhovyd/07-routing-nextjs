@@ -15,7 +15,6 @@ export default function FilterLayout({
       <aside className={css.sidebar}>{sidebar}</aside>
       <div className={css.notesWrapper}>
         {children}
-        {modal}
       </div>
     </div>
   );
