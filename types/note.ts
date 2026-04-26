@@ -6,3 +6,11 @@ export interface Note {
   updatedAt: string;
   tag: string;
 }
+
+export const TAGS = [
+  "Work",
+  "Personal",
+  "Meeting",
+  "Shopping",
+  "Todo",
+] as const;
