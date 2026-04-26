@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { fetchNoteById } from "@/lib/api";
 import css from "@/components/NoteDetails/NoteDetails.module.css";
 
-export default function NotePreviewClient() {
+export default function NoteDetailsClient() {
   const { id } = useParams<{ id: string }>();
 
   const {
