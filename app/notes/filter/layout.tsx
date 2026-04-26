@@ -7,14 +7,11 @@ export default function FilterLayout({
 }: {
   children: ReactNode;
   sidebar: ReactNode;
-  modal: React.ReactNode;
 }) {
   return (
     <div className={css.container}>
       <aside className={css.sidebar}>{sidebar}</aside>
-      <div className={css.notesWrapper}>
-        {children}
-      </div>
+      <div className={css.notesWrapper}>{children}</div>
     </div>
   );
 }
