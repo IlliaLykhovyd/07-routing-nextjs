@@ -34,13 +34,10 @@ export default function NotesClient({ tag }: { tag: string }) {
     setIsModalOpen(false);
   };
 
-  const findTasks = useDebouncedCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setQuery(event.target.value);
-      setPage(1);
-    },
-    500,
-  );
+  const findTasks = useDebouncedCallback((value: string) => {
+    setQuery(value);
+    setPage(1);
+  }, 500);
 
   useEffect(() => {
     if (isSuccess && data.notes.length === 0) {
