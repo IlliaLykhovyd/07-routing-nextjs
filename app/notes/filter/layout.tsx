@@ -4,7 +4,6 @@ import css from "./LayoutNotes.module.css";
 export default function FilterLayout({
   children,
   sidebar,
-  modal,
 }: {
   children: ReactNode;
   sidebar: ReactNode;
