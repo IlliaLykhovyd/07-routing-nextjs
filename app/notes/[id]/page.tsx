@@ -9,6 +9,7 @@ import NoteDetailsClient from "./NoteDetails.client";
 interface Props {
   params: Promise<{ id: string }>;
 }
+
 export default async function NoteModalPage({ params }: Props) {
   const { id } = await params;
 
@@ -21,7 +22,7 @@ export default async function NoteModalPage({ params }: Props) {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NoteDetailsClient />
+      <NoteDetailsClient id={id} />
     </HydrationBoundary>
   );
 }
