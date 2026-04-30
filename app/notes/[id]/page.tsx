@@ -6,23 +6,23 @@ import {
 } from "@tanstack/react-query";
 import NoteDetailsClient from "./NoteDetails.client";
 
-interface Props {
+type NoteDetailsProps = {
   params: Promise<{ id: string }>;
-}
+};
 
-export default async function NoteModalPage({ params }: Props) {
+export default async function NoteDetails({ params }: NoteDetailsProps) {
   const { id } = await params;
 
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["noteDetails", id],
+    queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NoteDetailsClient id={id} />
+      <NoteDetailsClient />
     </HydrationBoundary>
   );
 }
